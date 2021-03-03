@@ -33,7 +33,8 @@ public class MapperMethodInspection extends MapperInspection {
             @NotNull final InspectionManager manager,
             final boolean isOnTheFly) {
         if (!MapperLocator.getInstance(method.getProject()).process(method) ||
-                JavaUtils.isAnyAnnotationPresent(method, Annotation.STATEMENT_SYMMETRIES)) {
+                JavaUtils.isAnyAnnotationPresent(method, Annotation.STATEMENT_SYMMETRIES)
+                || method.getModifierList().hasModifierProperty(PsiModifier.STATIC)) {
             return EMPTY_ARRAY;
         }
 

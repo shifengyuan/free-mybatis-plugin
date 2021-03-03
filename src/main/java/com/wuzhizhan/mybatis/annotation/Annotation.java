@@ -36,7 +36,13 @@ public class Annotation implements Cloneable {
 
     public static final Annotation RESOURCE = new Annotation("@Resource", "javax.annotation.Resource");
 
-    public static final Set<Annotation> STATEMENT_SYMMETRIES = ImmutableSet.of(SELECT, UPDATE, INSERT, DELETE);
+    public static final Annotation SelectProvider = new Annotation("@SelectProvider", "org.apache.ibatis.annotations.SelectProvider");
+    public static final Annotation InsertProvider = new Annotation("@InsertProvider", "org.apache.ibatis.annotations.InsertProvider");
+    public static final Annotation DeleteProvider = new Annotation("@DeleteProvider", "org.apache.ibatis.annotations.DeleteProvider");
+    public static final Annotation UpdateProvider = new Annotation("@UpdateProvider", "org.apache.ibatis.annotations.UpdateProvider");
+
+    public static final Set<Annotation> STATEMENT_SYMMETRIES = ImmutableSet.of(SELECT, UPDATE, INSERT, DELETE,
+            SelectProvider, InsertProvider, DeleteProvider, UpdateProvider);
 
     private final String label;
 

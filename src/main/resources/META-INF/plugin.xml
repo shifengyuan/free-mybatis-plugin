@@ -11,7 +11,6 @@
         <li>generate mapper xml files</li>
         <li>navigate from the code to mapper and from the mapper back to code</li>
         <li>auto code and error tips</li>
-        <li>support mybatis generator gui</li>
     </ul>
 
     free-mybatis-plugin是一款增强idea对mybatis支持的插件，主要功能如下：<br/>
@@ -19,19 +18,11 @@
         <li>生成mapper xml文件</li>
         <li>快速从代码跳转到mapper及从mapper返回代码</li>
         <li>mybatis自动补全及语法错误提示</li>
-        <li>集成mybatis generator gui界面</li>
     </ul>
     ]]></description>
 
     <idea-version since-build="145"/>
-    <depends>com.intellij.database</depends>
-    <depends>com.intellij.spring</depends>
-    <actions>
-        <action id="free-mabatis-generate-action" class="com.wuzhizhan.mybatis.action.MybatisGeneratorMainAction" text="Mybatis-Generator"
-                description="Mybatis generator idea plugin">
-            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
-        </action>
-    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
         <dom.fileDescription implementation="com.wuzhizhan.mybatis.dom.description.MapperDescription"/>
         <dom.fileDescription implementation="com.wuzhizhan.mybatis.dom.description.ConfigurationDescription"/>
@@ -71,7 +62,5 @@
         <intentionAction order="first">
             <className>com.wuzhizhan.mybatis.intention.GenerateMapperIntention</className>
         </intentionAction>
-        <projectService serviceImplementation="com.wuzhizhan.mybatis.setting.PersistentConfig"/>
-        <projectConfigurable groupId="tools" displayName="Mybatis Generator Setting" id="free.mybatis.gene.id" instance="com.wuzhizhan.mybatis.setting.MybatisGeneratorConfigurable"/>
     </extensions>
 </idea-plugin>
